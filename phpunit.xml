@@ -1,0 +1,9 @@
+<phpunit>
+  <testsuites>
+    <testsuite name="all">
+        <file>tests/whs/ElectionMachine/Census/Participant/ParticipantTest.php</file>
+        <file>tests/whs/ElectionMachine/Census/Participant/ParticipantCollectionTest.php</file>
+        <file>tests/whs/ElectionMachine/ElectionMachineTest.php</file>
+    </testsuite>
+  </testsuites>
+</phpunit>
