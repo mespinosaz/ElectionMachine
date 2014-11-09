@@ -2,22 +2,9 @@
 
 namespace whs\ElectionMachine\Vote;
 
-class VoteCollection
+use whs\Utility\Collection\BaseCollection;
+
+class VoteCollection extends BaseCollection
 {
-    private $votes;
 
-    public function __construct()
-    {
-        $this->votes = array();
-    }
-
-    public function add(Vote $vote)
-    {
-        $this->votes[] = $vote;
-    }
-
-    public function size()
-    {
-        return count($this->votes);
-    }
 }

@@ -22,16 +22,16 @@ class Census
 
     private function participantInCensus(Participant $participant)
     {
-        return $this->participants->exists($participant);
+        return $this->participants->exists($participant->id());
     }
 
     private function participantHasVoted(Participant $participant)
     {
-        return $this->participants->participantHasVoted($participant);
+        return $this->participants->participantHasVoted($participant->id());
     }
 
     public function participantVoted(Participant $participant)
     {
-        $this->participants->participantVoted($participant);
+        $this->participants->participantVoted($participant->id());
     }
 }

@@ -6,6 +6,7 @@ require_once('autoload.php');
 
 use whs\ElectionMachine\Vote\VoteCollection;
 use whs\ElectionMachine\Vote\Vote;
+use whs\ElectionMachine\Party\Party;
 
 class VoteCollectionTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,7 +19,7 @@ class VoteCollectionTest extends \PHPUnit_Framework_TestCase
     public function testAdd()
     {
         $votes = new VoteCollection();
-        $newVote = new Vote(1);
+        $newVote = new Vote(new Party('test'));
 
         $this->assertEquals(0, $votes->size());
         $votes->add($newVote);

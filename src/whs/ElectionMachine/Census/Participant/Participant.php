@@ -2,20 +2,16 @@
 
 namespace whs\ElectionMachine\Census\Participant;
 
-class Participant
+use whs\Utility\ObjectTemplate\IdentifiedObject;
+
+class Participant extends IdentifiedObject
 {
-    private $participantId;
     private $hasVoted;
 
-    public function __construct($participantId)
+    public function __construct($identifier)
     {
-        $this->participantId = $participantId;
+        parent::__construct($identifier);
         $this->hasVoted = false;
-    }
-
-    public function id()
-    {
-        return $this->participantId;
     }
 
     public function hasVoted()

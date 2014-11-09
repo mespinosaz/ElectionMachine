@@ -17,17 +17,17 @@ class ParticipantCollectionTest extends \PHPUnit_Framework_TestCase
     {
         $participant = new Participant('test');
         $participants = new ParticipantCollection();
-        $participants->add($participant);
-        $this->assertTrue($participants->exists($participant));
+        $participants->add($participant->id(), $participant);
+        $this->assertTrue($participants->exists($participant->id()));
     }
 
     public function testVoted()
     {
         $participant = new Participant('test');
         $participants = new ParticipantCollection();
-        $participants->add($participant);
-        $this->assertFalse($participants->participantHasVoted($participant));
-        $participants->participantVoted($participant);
-        $this->assertTrue($participants->participantHasVoted($participant));
+        $participants->add($participant->id(), $participant);
+        $this->assertFalse($participants->participantHasVoted($participant->id()));
+        $participants->participantVoted($participant->id());
+        $this->assertTrue($participants->participantHasVoted($participant->id()));
     }
 }

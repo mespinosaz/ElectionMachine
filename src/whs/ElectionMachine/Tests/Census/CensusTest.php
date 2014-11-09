@@ -13,11 +13,11 @@ class CensusTest extends \PHPUnit_Framework_TestCase
     private function setupParticipants()
     {
         $participants = new ParticipantCollection();
-        $participants->add(new Participant('1234A'));
-        $participants->add(new Participant('1234B'));
-        $participants->add(new Participant('1234C'));
-        $participants->add(new Participant('1234D'));
-        $participants->add(new Participant('1234E'));
+        $participants->add('1234A', new Participant('1234A'));
+        $participants->add('1234B', new Participant('1234B'));
+        $participants->add('1234C', new Participant('1234C'));
+        $participants->add('1234D', new Participant('1234D'));
+        $participants->add('1234E', new Participant('1234E'));
 
         return $participants;
     }

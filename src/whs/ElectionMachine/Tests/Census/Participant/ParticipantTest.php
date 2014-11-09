@@ -18,13 +18,6 @@ class ElectionMachineTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('whs\ElectionMachine\Census\Participant\Participant', $participant);
     }
 
-    public function testId()
-    {
-        $id = 'test';
-        $participant = new Participant($id);
-        $this->assertEquals($id, $participant->id());
-    }
-
     public function testVoted()
     {
         $participant = new Participant('test');

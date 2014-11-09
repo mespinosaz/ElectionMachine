@@ -2,32 +2,17 @@
 
 namespace whs\ElectionMachine\Census\Participant;
 
-class ParticipantCollection
+use whs\Utility\Collection\HashedCollection;
+
+class ParticipantCollection extends HashedCollection
 {
-    private $participants;
-
-    public function __construct()
+    public function participantHasVoted($participantId)
     {
-        $this->participants = array();
+        return $this->collection[$participantId]->hasVoted();
     }
 
-    public function add(Participant $participant)
+    public function participantVoted($participantId)
     {
-        $this->participants[$participant->id()] = $participant;
-    }
-
-    public function exists(Participant $participant)
-    {
-        return !empty($this->participants[$participant->id()]);
-    }
-
-    public function participantHasVoted(Participant $participant)
-    {
-        return $this->participants[$participant->id()]->hasVoted();
-    }
-
-    public function participantVoted(Participant $participant)
-    {
-        $this->participants[$participant->id()]->voted();
+        $this->collection[$participantId]->voted();
     }
 }

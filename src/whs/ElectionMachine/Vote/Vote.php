@@ -2,12 +2,19 @@
 
 namespace whs\ElectionMachine\Vote;
 
+use whs\ElectionMachine\Party\Party;
+
 class Vote
 {
     private $party;
 
-    public function __construct($partyId)
+    public function __construct(Party $party)
     {
-        $this->party = $partyId;
+        $this->party = $party;
+    }
+
+    public function readParty()
+    {
+        return $this->party;
     }
 }
