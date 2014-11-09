@@ -1,6 +1,6 @@
 <?php
 
-namespace whs\tests\ElectionMachine\Party;
+namespace whs\ElectionMachine\Tests\Party;
 
 use whs\ElectionMachine\Party\Party;
 use whs\ElectionMachine\Party\PartyCollection;

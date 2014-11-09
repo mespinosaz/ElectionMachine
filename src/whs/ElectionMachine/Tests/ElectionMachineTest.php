@@ -1,6 +1,6 @@
 <?php
 
-namespace whs\tests\ElectionMachine;
+namespace whs\ElectionMachine\Tests;
 
 require_once('autoload.php');
 

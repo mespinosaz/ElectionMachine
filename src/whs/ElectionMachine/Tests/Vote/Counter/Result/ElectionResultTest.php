@@ -1,6 +1,6 @@
 <?php
 
-namespace whs\tests\ElectionMachine\Vote\Counter\Result;
+namespace whs\ElectionMachine\Tests\Vote\Counter\Result;
 
 require_once('autoload.php');
 

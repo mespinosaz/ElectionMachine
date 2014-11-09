@@ -1,6 +1,6 @@
 <?php
 
-namespace whs\tests\ElectionMachine\Census\Participant;
+namespace whs\ElectionMachine\Tests\Census\Participant;
 
 use whs\ElectionMachine\Census\Participant\Participant;
 use whs\ElectionMachine\Census\Participant\ParticipantCollection;

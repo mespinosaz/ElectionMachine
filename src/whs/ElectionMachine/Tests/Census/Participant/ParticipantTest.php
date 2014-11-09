@@ -1,6 +1,6 @@
 <?php
 
-namespace whs\tests\ElectionMachine\Census\Participant;
+namespace whs\ElectionMachine\Tests\Census\Participant;
 
 require_once('autoload.php');
 
