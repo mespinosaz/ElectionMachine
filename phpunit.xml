@@ -1,9 +1,13 @@
 <phpunit>
   <testsuites>
     <testsuite name="all">
-        <file>tests/whs/ElectionMachine/Census/Participant/ParticipantTest.php</file>
-        <file>tests/whs/ElectionMachine/Census/Participant/ParticipantCollectionTest.php</file>
-        <file>tests/whs/ElectionMachine/ElectionMachineTest.php</file>
+	<file>src/symfony/ClassLoader/Tests/UniversalClassLoaderTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/Census/Participant/ParticipantTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/Census/Participant/ParticipantCollectionTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/Census/CensusTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/ElectionMachineTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/Vote/VoteCollectionTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/Vote/VoteTest.php</file>
     </testsuite>
   </testsuites>
 </phpunit>

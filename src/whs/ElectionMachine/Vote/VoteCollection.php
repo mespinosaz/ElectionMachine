@@ -13,6 +13,11 @@ class VoteCollection
 
     public function add(Vote $vote)
     {
-        $votes[] = $vote;
+        $this->votes[] = $vote;
+    }
+
+    public function size()
+    {
+        return count($this->votes);
     }
 }

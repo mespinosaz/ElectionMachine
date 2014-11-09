@@ -6,5 +6,4 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespace('whs', __DIR__.'/src/');
-$loader->registerNamespace('whs\tests', __DIR__.'/tests/');
 $loader->register();
