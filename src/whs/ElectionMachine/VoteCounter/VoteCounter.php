@@ -1,10 +1,10 @@
 <?php
 
-namespace whs\ElectionMachine\Vote\Counter;
+namespace whs\ElectionMachine\VoteCounter;
 
 use whs\ElectionMachine\Party\PartyCollection;
 use whs\ElectionMachine\Vote\VoteCollection;
-use whs\ElectionMachine\Vote\Counter\Result\ElectionResult;
+use whs\ElectionMachine\VoteCounter\Result\ElectionResult;
 
 class VoteCounter
 {

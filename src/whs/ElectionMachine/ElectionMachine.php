@@ -8,7 +8,7 @@ use whs\ElectionMachine\Census\Census;
 use whs\ElectionMachine\Census\Participant\Participant;
 use whs\ElectionMachine\Exception\ParticipantCannnotVoteException;
 use whs\ElectionMachine\Party\PartyCollection;
-use whs\ElectionMachine\Vote\Counter\VoteCounter;
+use whs\ElectionMachine\VoteCounter\VoteCounter;
 
 class ElectionMachine
 {

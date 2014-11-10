@@ -1,6 +1,6 @@
 <?php
 
-namespace whs\ElectionMachine\Vote\Counter\Result;
+namespace whs\ElectionMachine\VoteCounter\Result;
 
 use whs\ElectionMachine\Party\PartyCollection;
 use whs\ElectionMachine\Vote\VoteCollection;

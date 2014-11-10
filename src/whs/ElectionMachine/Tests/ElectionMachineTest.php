@@ -91,6 +91,6 @@ class ElectionMachineTest extends \PHPUnit_Framework_TestCase
     public function testResults()
     {
         $results = $this->defaultMachine->result();
-        $this->assertInstanceOf('whs\ElectionMachine\Vote\Counter\Result\ElectionResult', $results);
+        $this->assertInstanceOf('whs\ElectionMachine\VoteCounter\Result\ElectionResult', $results);
     }
 }

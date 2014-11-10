@@ -10,8 +10,8 @@
         <file>src/whs/ElectionMachine/Tests/Vote/VoteTest.php</file>
         <file>src/whs/ElectionMachine/Tests/Party/PartyTest.php</file>
         <file>src/whs/ElectionMachine/Tests/Party/PartyCollectionTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Vote/Counter/VoteCounterTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Vote/Counter/Result/ElectionResultTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/VoteCounter/VoteCounterTest.php</file>
+        <file>src/whs/ElectionMachine/Tests/VoteCounter/Result/ElectionResultTest.php</file>
         <file>src/whs/Utility/Tests/Collection/BaseCollectionTest.php</file>
         <file>src/whs/Utility/Tests/Collection/HashedCollectionTest.php</file>
         <file>src/whs/Utility/Tests/ObjectTemplate/IdentifiedObjectTest.php</file>

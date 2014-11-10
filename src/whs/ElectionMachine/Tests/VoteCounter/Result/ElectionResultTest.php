@@ -1,10 +1,10 @@
 <?php
 
-namespace whs\ElectionMachine\Tests\Vote\Counter\Result;
+namespace whs\ElectionMachine\Tests\VoteCounter\Result;
 
 require_once('autoload.php');
 
-use whs\ElectionMachine\Vote\Counter\Result\ElectionResult;
+use whs\ElectionMachine\VoteCounter\Result\ElectionResult;
 use whs\ElectionMachine\Party\PartyCollection;
 use whs\ElectionMachine\Vote\VoteCollection;
 use whs\ElectionMachine\Party\Party;
@@ -45,7 +45,7 @@ class ElectionResultTest extends \PHPUnit_Framework_TestCase
 
     public function testConstructor()
     {
-        $this->assertInstanceOf('whs\ElectionMachine\Vote\Counter\Result\ElectionResult', $this->result);
+        $this->assertInstanceOf('whs\ElectionMachine\VoteCounter\Result\ElectionResult', $this->result);
     }
 
     public function testPercentage()
