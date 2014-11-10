@@ -40,4 +40,11 @@ class CensusTest extends \PHPUnit_Framework_TestCase
         $census->participantVoted($participantInCensus);
         $this->assertFalse($census->participantCanVote($participantInCensus));
     }
+
+    public function testNumberOfParticipants()
+    {
+        $participants = $this->setupParticipants();
+        $census = new Census($participants);
+        $this->assertEquals($census->numberOfParticipants(), 5);
+    }
 }
