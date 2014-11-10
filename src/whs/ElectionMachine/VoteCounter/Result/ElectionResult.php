@@ -5,18 +5,26 @@ namespace whs\ElectionMachine\VoteCounter\Result;
 use whs\ElectionMachine\Party\PartyCollection;
 use whs\ElectionMachine\Vote\VoteCollection;
 use whs\ElectionMachine\Party\Party;
+use whs\ElectionMachine\Census\Census;
 
 class ElectionResult
 {
     const NULL_PARTY_ID = -1;
 
     private $results;
+    private $numberOfParticipants;
 
-    public function __construct(PartyCollection $partyCollection, VoteCollection $voteCollection)
+    public function __construct(PartyCollection $partyCollection, Census $census, VoteCollection $voteCollection)
     {
         $this->results = array();
         $this->initializeResults($partyCollection);
         $this->computeResults($voteCollection);
+        $this->computeNumberOfParticipants($census);
+    }
+
+    private function computeNumberOfParticipants(Census $census)
+    {
+        $this->numberOfParticipants = $census->numberOfParticipants();
     }
 
     private function initializeResults(PartyCollection $partyCollection)
@@ -53,21 +61,26 @@ class ElectionResult
 
     private function percentageOfPartyByIdentifier($identifier)
     {
-        return ($this->results[$identifier]/$this->getTotalVotes())*100;
-    }
-
-    public function getTotalVotes()
-    {
-        $total = 0;
-        foreach ($this->results as $value) {
-            $total += $value;
-        }
-
-        return $total;
+        return ($this->results[$identifier]/$this->numberOfParticipants)*100;
     }
 
     private function partyExists(Party $party)
     {
         return in_array($party->id(), array_keys($this->results));
     }
+
+    public function percentageOfAbstinence()
+    {
+        return 100 * ( $this->numberOfParticipants - $this->getTotalVotes() ) / $this->numberOfParticipants;
+    }
+
+    private function getTotalVotes()
+    {
+        $total = 0;
+        foreach ($this->results as $value) {
+            $total += $value;
+        }
+        return $total;
+    }
+
 }

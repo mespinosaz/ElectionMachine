@@ -34,4 +34,9 @@ class Census
     {
         $this->participants->participantVoted($participant->id());
     }
+
+    public function numberOfParticipants()
+    {
+        return $this->participants->size();
+    }
 }

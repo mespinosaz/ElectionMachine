@@ -7,13 +7,17 @@ require_once('autoload.php');
 use whs\ElectionMachine\VoteCounter\VoteCounter;
 use whs\ElectionMachine\Party\PartyCollection;
 use whs\ElectionMachine\Vote\VoteCollection;
+use whs\ElectionMachine\Census\Participant\ParticipantCollection;
+use whs\ElectionMachine\Census\Census;
 
 class VoteTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructor()
     {
         $partyCollection = new PartyCollection();
-        $counter = new VoteCounter($partyCollection);
+        $participantsCollection = new ParticipantCollection();
+        $census = new Census($participantsCollection);
+        $counter = new VoteCounter($partyCollection, $census);
         $this->assertInstanceOf('whs\ElectionMachine\VoteCounter\VoteCounter', $counter);
     }
 
@@ -21,7 +25,9 @@ class VoteTest extends \PHPUnit_Framework_TestCase
     {
         $partyCollection = new PartyCollection();
         $voteCollection = new VoteCollection();
-        $counter = new VoteCounter($partyCollection);
+        $participantsCollection = new ParticipantCollection();
+        $census = new Census($participantsCollection);
+        $counter = new VoteCounter($partyCollection, $census);
         $result = $counter->result($voteCollection);
         $this->assertInstanceOf('whs\ElectionMachine\VoteCounter\Result\ElectionResult', $result);
     }

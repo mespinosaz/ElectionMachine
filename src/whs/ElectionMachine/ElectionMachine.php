@@ -20,7 +20,7 @@ class ElectionMachine
     {
         $this->voteCollection = new VoteCollection();
         $this->census = $census;
-        $this->voteCounter = new VoteCounter($partyCollection);
+        $this->voteCounter = new VoteCounter($partyCollection, $census);
     }
 
     public function newVote(Vote $newVote, Participant $participant)
