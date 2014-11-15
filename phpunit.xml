@@ -1,4 +1,4 @@
-<phpunit>
+<phpunit bootstrap="./autoload.php">
   <testsuites>
     <testsuite name="all">
 	<file>src/symfony/ClassLoader/Tests/UniversalClassLoaderTest.php</file>

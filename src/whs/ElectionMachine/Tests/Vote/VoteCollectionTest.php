@@ -2,8 +2,6 @@
 
 namespace whs\ElectionMachine\Tests\Vote;
 
-require_once('autoload.php');
-
 use whs\ElectionMachine\Vote\VoteCollection;
 use whs\ElectionMachine\Vote\Vote;
 use whs\ElectionMachine\Party\Party;
