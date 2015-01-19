@@ -1,20 +1,17 @@
-<phpunit bootstrap="./autoload.php">
-  <testsuites>
-    <testsuite name="all">
-	<file>src/symfony/ClassLoader/Tests/UniversalClassLoaderTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Census/Participant/ParticipantTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Census/Participant/ParticipantCollectionTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Census/CensusTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/ElectionMachineTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Vote/VoteCollectionTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Vote/VoteTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Party/PartyTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/Party/PartyCollectionTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/VoteCounter/VoteCounterTest.php</file>
-        <file>src/whs/ElectionMachine/Tests/VoteCounter/Result/ElectionResultTest.php</file>
-        <file>src/whs/Utility/Tests/Collection/BaseCollectionTest.php</file>
-        <file>src/whs/Utility/Tests/Collection/HashedCollectionTest.php</file>
-        <file>src/whs/Utility/Tests/ObjectTemplate/IdentifiedObjectTest.php</file>
-    </testsuite>
-  </testsuites>
+<phpunit backupGlobals="false"
+    backupStaticAttributes="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    syntaxCheck="false"
+    bootstrap="vendor/autoload.php">
+
+    <testsuites>
+        <testsuite name="Project test suite">
+            <directory suffix="Test.php">./src/ElectionMachine/Tests/</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
