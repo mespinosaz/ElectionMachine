@@ -6,5 +6,4 @@ use mespinosaz\Utility\Collection\HashedCollection;
 
 class PartyCollection extends HashedCollection
 {
-
 }

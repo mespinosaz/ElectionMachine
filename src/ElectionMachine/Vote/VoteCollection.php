@@ -6,5 +6,4 @@ use mespinosaz\Utility\Collection\Collection;
 
 class VoteCollection extends Collection
 {
-
 }
