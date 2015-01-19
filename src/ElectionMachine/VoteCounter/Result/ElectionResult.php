@@ -11,9 +11,21 @@ class ElectionResult
 {
     const NULL_PARTY_ID = -1;
 
+    /**
+     * @param array $results
+     */
     private $results;
+
+    /**
+     * @param int $numberOfParticipants
+     */
     private $numberOfParticipants;
 
+    /**
+     * @param PartyCollection $partyCollection
+     * @param Census $census
+     * @param VoteCollection $voteCollection
+     */
     public function __construct(PartyCollection $partyCollection, Census $census, VoteCollection $voteCollection)
     {
         $this->results = array();
@@ -22,11 +34,17 @@ class ElectionResult
         $this->computeNumberOfParticipants($census);
     }
 
+    /**
+     * @param Census $census
+     */
     private function computeNumberOfParticipants(Census $census)
     {
         $this->numberOfParticipants = $census->numberOfParticipants();
     }
 
+    /**
+     * @param PartyCollection $partyCollection
+     */
     private function initializeResults(PartyCollection $partyCollection)
     {
         $this->results[self::NULL_PARTY_ID] = 0;
@@ -35,6 +53,9 @@ class ElectionResult
         }
     }
 
+    /**
+     * @param VoteCollection $voteCollection
+     */
     private function computeResults(VoteCollection $voteCollection)
     {
         for ($i=0; $i<$voteCollection->size(); $i++) {
@@ -49,31 +70,52 @@ class ElectionResult
         }
     }
 
+    /**
+     * @param Party $party
+     * @return float
+     */
     public function percentageOfParty(Party $party)
     {
         return $this->percentageOfPartyByIdentifier($party->getId());
     }
 
+    /**
+     * @return float
+     */
     public function percentageOfNull()
     {
         return $this->percentageOfPartyByIdentifier(self::NULL_PARTY_ID);
     }
 
+    /**
+     * @param string $identifier
+     * @return float
+     */
     private function percentageOfPartyByIdentifier($identifier)
     {
         return ($this->results[$identifier]/$this->numberOfParticipants)*100;
     }
 
+    /**
+     * @param Party $party
+     * @return boolean
+     */
     private function partyExists(Party $party)
     {
         return in_array($party->getId(), array_keys($this->results));
     }
 
+    /**
+     * @return float
+     */
     public function percentageOfAbstinence()
     {
         return 100 * ( $this->numberOfParticipants - $this->getTotalVotes() ) / $this->numberOfParticipants;
     }
 
+    /**
+     * @return int
+     */
     private function getTotalVotes()
     {
         $total = 0;
@@ -82,5 +124,4 @@ class ElectionResult
         }
         return $total;
     }
-
 }
